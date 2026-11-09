@@ -1,0 +1,63 @@
+{
+  "naam": "Julia van Tilburg",
+  "rol": "Fitnesstrainer & coach",
+  "kop": "Personal training & lifestyle coaching",
+  "intro": "✏️ Schrijf hier in één of twee zinnen voor wie je er bent en wat je samen bereikt.",
+  "foto": "images/julia.jpg",
+  "knop_tekst": "Plan een kennismaking",
+  "accentkleur": "zand",
+  "over_titel": "Over mij",
+  "over_tekst": "✏️ Vertel hier wie je bent, hoe je coach bent geworden en waarom je dit werk zo leuk vindt.\n\n✏️ Een tweede alinea kan over je aanpak: waar let je op, wat maakt jouw manier anders?",
+  "over_foto": "",
+  "diensten": [
+    {
+      "titel": "Personal training",
+      "tekst": "✏️ Beschrijf hier hoe een training met jou eruitziet."
+    },
+    {
+      "titel": "Lifestyle & Nutrition Coaching",
+      "tekst": "✏️ Beschrijf hier hoe je helpt met voeding en leefstijl."
+    },
+    {
+      "titel": "We EmpowHER",
+      "tekst": "✏️ Vertel hier wat We EmpowHER is en voor wie."
+    }
+  ],
+  "stappen": [
+    {
+      "titel": "Kennismaken",
+      "tekst": "✏️ Wat gebeurt er in het eerste gesprek?"
+    },
+    {
+      "titel": "Plan op maat",
+      "tekst": "✏️ Hoe stel je het plan samen?"
+    },
+    {
+      "titel": "Samen aan de slag",
+      "tekst": "✏️ Hoe begeleid je daarna?"
+    }
+  ],
+  "tarieven": [
+    {
+      "naam": "✏️ Losse training",
+      "prijs": "€ …",
+      "tekst": "✏️ Wat zit erbij?"
+    },
+    {
+      "naam": "✏️ Rittenkaart",
+      "prijs": "€ …",
+      "tekst": "✏️ Wat zit erbij?"
+    },
+    {
+      "naam": "✏️ Coaching per maand",
+      "prijs": "€ …",
+      "tekst": "✏️ Wat zit erbij?"
+    }
+  ],
+  "ervaringen": [],
+  "locatie_titel": "Waar je me vindt",
+  "locatie_tekst": "MANA Social Performance Club\nThe Blob, Nieuwe Emmasingel 12–14\n5611 AM Eindhoven",
+  "whatsapp": "",
+  "email": "",
+  "instagram": "juliavt_coaching"
+}

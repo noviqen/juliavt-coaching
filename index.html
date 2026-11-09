@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Personal training & coaching</title>
+<meta name="description" content="Personal training en lifestyle & nutrition coaching.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#121212; --paper:#F5F1EB; --muted:#6d665f; --line:#e2dbd1;
+    --accent:#B98D63; --accent-ink:#121212;
+    --serif:"Instrument Serif", Georgia, serif;
+    --sans:"Manrope", system-ui, sans-serif;
+  }
+  [data-kleur="roze"]{--accent:#D9939C}
+  [data-kleur="rood"]{--accent:#C8452F; --accent-ink:#fff}
+  [data-kleur="groen"]{--accent:#7E9C84}
+  [data-kleur="blauw"]{--accent:#6E8BA8; --accent-ink:#fff}
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  .todo{color:var(--muted);font-style:italic;background:repeating-linear-gradient(90deg,transparent 0 6px,rgba(0,0,0,.035) 6px 12px);border-radius:4px}
+
+  /* nav */
+  nav{position:fixed;inset:0 0 auto 0;z-index:10;transition:background .3s, color .3s;color:#fff}
+  nav.solid{background:rgba(245,241,235,.92);backdrop-filter:blur(10px);color:var(--ink);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:var(--serif);font-size:1.45rem;text-decoration:none;letter-spacing:.01em}
+  .nav-cta{font-size:.85rem;font-weight:700;text-decoration:none;padding:9px 16px;border-radius:99px;background:var(--accent);color:var(--accent-ink)}
+
+  /* hero */
+  .hero{background:#111;color:#fff;min-height:100svh;display:grid;align-items:end;position:relative;overflow:hidden}
+  .hero-img{position:absolute;inset:0;background-size:cover;background-position:center 20%;opacity:.62}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,17,17,.35) 0%,rgba(17,17,17,0) 30%,rgba(17,17,17,.85) 80%)}
+  .hero .wrap{position:relative;z-index:1;padding-bottom:72px;padding-top:120px}
+  .rol{text-transform:uppercase;letter-spacing:.18em;font-size:.75rem;font-weight:700;color:var(--accent)}
+  .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.9rem,9vw,6rem);line-height:.98;margin:.25em 0 .3em;max-width:12ch}
+  .hero .naam{font-size:1rem;font-weight:500;opacity:.85}
+  .hero p.intro{max-width:46ch;font-size:1.05rem;opacity:.9;margin:.9em 0 1.6em}
+  .hero .todo{color:#cfc7bd;background:rgba(255,255,255,.06)}
+  .btn{display:inline-block;font-weight:700;text-decoration:none;padding:15px 26px;border-radius:99px;background:var(--accent);color:var(--accent-ink);transition:transform .15s}
+  .btn:active{transform:scale(.97)}
+
+  @media (min-width:860px){
+    .hero{grid-template-columns:1fr}
+    .hero-img{left:45%;opacity:1}
+    .hero::after{background:linear-gradient(90deg,#111 46%,rgba(17,17,17,.35) 62%,rgba(17,17,17,0) 78%)}
+    .hero .wrap{width:100%;padding-bottom:110px}
+  }
+
+  /* sections */
+  section.blok{padding:88px 0;border-bottom:1px solid var(--line)}
+  .label{text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;font-weight:700;color:var(--muted);margin-bottom:14px}
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,6vw,3.4rem);line-height:1.05;margin-bottom:28px}
+  .over{display:grid;gap:36px}
+  .over p+p{margin-top:1em}
+  .over-foto{border-radius:18px;overflow:hidden;aspect-ratio:4/5;object-fit:cover;width:100%}
+  @media (min-width:860px){.over.met-foto{grid-template-columns:1fr 1.2fr;align-items:center}}
+
+  .kaarten{display:grid;gap:14px}
+  @media (min-width:760px){.kaarten{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}}
+  .kaart{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px}
+  .kaart .nr{font-family:var(--serif);font-size:2.2rem;color:var(--accent);line-height:1}
+  .kaart h3{font-size:1.1rem;margin:10px 0 6px}
+  .kaart p{color:#3d3833;font-size:.97rem}
+  .dienst{border-top:4px solid var(--accent)}
+
+  .prijs{font-family:var(--serif);font-size:2.4rem;line-height:1;margin:8px 0 10px}
+
+  .quote{background:var(--ink);color:#fff;border:0}
+  .quote p{color:#eee;font-family:var(--serif);font-size:1.45rem;line-height:1.3}
+  .quote .wie{font-family:var(--sans);font-size:.85rem;opacity:.7;margin-top:14px}
+
+  .contact{background:var(--ink);color:#fff;padding:96px 0 110px}
+  .contact h2{max-width:14ch}
+  .adres{white-space:pre-line;opacity:.85;margin-bottom:34px}
+  .knoppen{display:flex;flex-wrap:wrap;gap:12px}
+  .btn.licht{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+  footer{background:var(--ink);color:rgba(255,255,255,.45);font-size:.8rem;padding:0 0 34px}
+  .verborgen{display:none!important}
+</style>
+</head>
+<body>
+<nav id="nav"><div class="wrap">
+  <a class="logo" href="#top" id="logo"></a>
+  <a class="nav-cta" href="#contact" id="navcta">Contact</a>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="hero-img" id="heroimg"></div>
+  <div class="wrap">
+    <div class="rol" id="rol"></div>
+    <h1 id="kop"></h1>
+    <div class="naam" id="naam"></div>
+    <p class="intro" id="intro"></p>
+    <a class="btn" href="#contact" id="cta"></a>
+  </div>
+</header>
+
+<section class="blok" id="over-sectie"><div class="wrap">
+  <div class="over" id="over">
+    <img class="over-foto verborgen" id="overfoto" alt="">
+    <div><div class="label">Even voorstellen</div><h2 id="overtitel"></h2><div id="overtekst"></div></div>
+  </div>
+</div></section>
+
+<section class="blok" id="diensten-sectie"><div class="wrap">
+  <div class="label">Aanbod</div><h2>Wat ik doe</h2>
+  <div class="kaarten" id="diensten"></div>
+</div></section>
+
+<section class="blok" id="stappen-sectie"><div class="wrap">
+  <div class="label">Werkwijze</div><h2>Zo werkt het</h2>
+  <div class="kaarten" id="stappen"></div>
+</div></section>
+
+<section class="blok" id="tarieven-sectie"><div class="wrap">
+  <div class="label">Tarieven</div><h2>Investering</h2>
+  <div class="kaarten" id="tarieven"></div>
+</div></section>
+
+<section class="blok" id="ervaringen-sectie"><div class="wrap">
+  <div class="label">Ervaringen</div><h2>Wat klanten zeggen</h2>
+  <div class="kaarten" id="ervaringen"></div>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+  <div class="label" style="color:rgba(255,255,255,.55)" id="loctitel"></div>
+  <h2>Zin om te beginnen?</h2>
+  <p class="adres" id="adres"></p>
+  <div class="knoppen" id="knoppen"></div>
+</div></section>
+<footer><div class="wrap" id="voet"></div></footer>
+
+<script>
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const isTodo = s => String(s || "").trim().startsWith("✏️");
+const txt = s => isTodo(s) ? `<span class="todo">${esc(s)}</span>` : esc(s);
+const paras = s => String(s || "").split(/\n\s*\n/).filter(p => p.trim()).map(p => `<p>${txt(p.trim())}</p>`).join("");
+const leeg = s => !String(s || "").trim();
+const $ = id => document.getElementById(id);
+
+function verberg(id, als){ $(id).classList.toggle("verborgen", !!als); }
+
+function waLink(nr){
+  let d = String(nr).replace(/\D/g, "");
+  if (d.startsWith("00")) d = d.slice(2);
+  else if (d.startsWith("0")) d = "31" + d.slice(1);
+  return "https://wa.me/" + d;
+}
+
+fetch("content/site.json", {cache: "no-store"}).then(r => r.json()).then(c => {
+  document.documentElement.dataset.kleur = c.accentkleur || "zand";
+  document.title = `${c.naam} · ${c.rol || "coach"}`;
+  $("logo").textContent = c.naam;
+  $("rol").innerHTML = txt(c.rol);
+  $("kop").innerHTML = txt(c.kop);
+  $("naam").innerHTML = txt(c.naam);
+  $("intro").innerHTML = txt(c.intro);
+  verberg("intro", leeg(c.intro));
+  $("cta").textContent = c.knop_tekst || "Neem contact op";
+  if (c.foto) $("heroimg").style.backgroundImage = `url("${encodeURI(c.foto)}")`;
+
+  $("overtitel").innerHTML = txt(c.over_titel);
+  $("overtekst").innerHTML = paras(c.over_tekst);
+  if (c.over_foto) { $("overfoto").src = c.over_foto; $("overfoto").classList.remove("verborgen"); $("over").classList.add("met-foto"); }
+  verberg("over-sectie", leeg(c.over_tekst));
+
+  const lijst = (id, items, html) => {
+    const ok = (items || []).filter(i => Object.values(i || {}).some(v => !leeg(v)));
+    $(id).innerHTML = ok.map(html).join("");
+    verberg(id + "-sectie", !ok.length);
+  };
+  lijst("diensten", c.diensten, d => `<div class="kaart dienst"><h3>${txt(d.titel)}</h3><p>${txt(d.tekst)}</p></div>`);
+  lijst("stappen", c.stappen, (s, i) => `<div class="kaart"><div class="nr">0${i+1}</div><h3>${txt(s.titel)}</h3><p>${txt(s.tekst)}</p></div>`);
+  lijst("tarieven", c.tarieven, t => `<div class="kaart"><h3>${txt(t.naam)}</h3><div class="prijs">${esc(t.prijs)}</div><p>${txt(t.tekst)}</p></div>`);
+  lijst("ervaringen", c.ervaringen, e => `<div class="kaart quote"><p>“${txt(e.tekst)}”</p><div class="wie">— ${esc(e.naam)}</div></div>`);
+
+  $("loctitel").innerHTML = txt(c.locatie_titel);
+  $("adres").innerHTML = txt(c.locatie_tekst);
+
+  const knoppen = [];
+  if (!leeg(c.whatsapp)) knoppen.push(`<a class="btn" href="${waLink(c.whatsapp)}">WhatsApp mij</a>`);
+  if (!leeg(c.email)) knoppen.push(`<a class="btn ${knoppen.length ? "licht" : ""}" href="mailto:${esc(c.email.trim())}">Mail mij</a>`);
+  if (!leeg(c.instagram)) knoppen.push(`<a class="btn ${knoppen.length ? "licht" : ""}" href="https://instagram.com/${esc(c.instagram.replace(/^@/, "").trim())}">Instagram</a>`);
+  $("knoppen").innerHTML = knoppen.join("");
+  const eerste = $("knoppen").querySelector("a");
+  if (eerste) { $("cta").href = eerste.href; $("navcta").href = eerste.href; }
+
+  $("voet").textContent = `© ${new Date().getFullYear()} ${c.naam}`;
+});
+
+addEventListener("scroll", () => $("nav").classList.toggle("solid", scrollY > innerHeight * 0.7), {passive: true});
+</script>
+</body>
+</html>

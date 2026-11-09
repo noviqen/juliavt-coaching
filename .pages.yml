@@ -1,0 +1,59 @@
+media:
+  input: images
+  output: images
+
+content:
+  - name: site
+    label: Mijn website
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - { name: naam, label: Naam, type: string }
+      - { name: rol, label: "Wat ben je (klein, boven je naam)", type: string }
+      - { name: kop, label: Grote kop bovenaan, type: string }
+      - { name: intro, label: Korte tekst onder de kop, type: text }
+      - { name: foto, label: Grote foto bovenaan, type: image }
+      - { name: knop_tekst, label: Tekst op de knop, type: string }
+      - name: accentkleur
+        label: Kleur van de site
+        type: select
+        options:
+          values: [zand, roze, rood, groen, blauw]
+      - { name: over_titel, label: "Over mij: titel", type: string }
+      - { name: over_tekst, label: "Over mij: tekst (lege regel = nieuwe alinea)", type: text }
+      - { name: over_foto, label: "Over mij: tweede foto (mag leeg)", type: image }
+      - name: diensten
+        label: Wat ik doe
+        type: object
+        list: true
+        fields:
+          - { name: titel, label: Titel, type: string }
+          - { name: tekst, label: Tekst, type: text }
+      - name: stappen
+        label: Zo werkt het (stappen)
+        type: object
+        list: true
+        fields:
+          - { name: titel, label: Titel, type: string }
+          - { name: tekst, label: Tekst, type: text }
+      - name: tarieven
+        label: Tarieven (leeg = niet tonen)
+        type: object
+        list: true
+        fields:
+          - { name: naam, label: Naam, type: string }
+          - { name: prijs, label: Prijs, type: string }
+          - { name: tekst, label: Wat zit erbij, type: text }
+      - name: ervaringen
+        label: Ervaringen van klanten (leeg = niet tonen)
+        type: object
+        list: true
+        fields:
+          - { name: tekst, label: Wat zei de klant, type: text }
+          - { name: naam, label: Naam klant, type: string }
+      - { name: locatie_titel, label: "Locatie: titel", type: string }
+      - { name: locatie_tekst, label: "Locatie: adres", type: text }
+      - { name: whatsapp, label: "WhatsApp-nummer (bijv. 0612345678)", type: string }
+      - { name: email, label: E-mailadres, type: string }
+      - { name: instagram, label: "Instagram-naam (zonder @)", type: string }
